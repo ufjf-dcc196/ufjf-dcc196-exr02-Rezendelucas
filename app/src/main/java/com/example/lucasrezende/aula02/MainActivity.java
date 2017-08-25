@@ -27,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
         btnSubtrai = (Button) findViewById(R.id.BtnSubtrai);
 
         Ouvinte ouvinte = new Ouvinte();
+        Ouvinte ouvinte2 = new Ouvinte();
         btnSoma.setOnClickListener(ouvinte);
-        btnSubtrai.setOnClickListener(ouvinte);
+        btnSubtrai.setOnClickListener(ouvinte2);
 
         txtResultado.setText("Entre com os valores para operação...");
     }
@@ -40,6 +41,14 @@ private class Ouvinte implements View.OnClickListener{
             int valor1 =  Integer.parseInt(edtValor1.getText().toString());
             int valor2 =  Integer.parseInt(edtValor2.getText().toString());
             txtResultado.setText("Resposta: " + (valor1 + valor2));
+        }
+    }
+private class Ouvinte2 implements View.OnClickListener{
+        @Override
+        public void onClick(View view) {
+            int valor1 =  Integer.parseInt(edtValor1.getText().toString());
+            int valor2 =  Integer.parseInt(edtValor2.getText().toString());
+            txtResultado.setText("Resposta: " + (valor1 - valor2));
         }
     }
 }
